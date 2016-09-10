@@ -24,7 +24,6 @@ function readFile(filePath, callback) {
 }
 
 function writeFile(array, option, filePath, callback) {
-
     var fullText = "";
 
     for (var text of array) {
@@ -33,7 +32,7 @@ function writeFile(array, option, filePath, callback) {
     }
 
     if (option == "n") {
-        fs.writeFile(fileName, fullText, (err) => {
+        fs.writeFile(filePath, fullText, (err) => {
             if (err) {
                 throw err;
                 callback(0);
@@ -54,5 +53,4 @@ function writeFile(array, option, filePath, callback) {
             })
         })
     }
-
 }
